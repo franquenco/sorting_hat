@@ -2,7 +2,7 @@
 const HOUSES_DATA = {
     "4A": {
         "GRIFONDORO": {
-            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestra Anna"],
+            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", /* Maestra Anna rimossa da qui */],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio, dell'audacia e della cavalleria",
             "traits": "Coraggiosi, audaci, temerari e cavallereschi",
@@ -11,7 +11,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Razin", "Tassnime", "Nusaiba", "Puneet", "Harfateh"],
+            "students": ["Razin", "Tassnime", "Nusaiba", "Puneet", "Harfateh", "Maestra Alissa", "Maestra Federica"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà, della pazienza e del duro lavoro", 
             "traits": "Leali, pazienti, gentili e laboriosi",
@@ -29,7 +29,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Sayan", "Farhan", "Tabeeb", "Sanvir", "Joya"],
+            "students": ["Sayan", "Farhan", "Tabeeb", "Sanvir", "Joya", "Maestra Anna"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione, della determinazione e dell'astuzia",
             "traits": "Ambiziosi, determinati, astuti e intraprendenti", 
@@ -40,7 +40,7 @@ const HOUSES_DATA = {
     },
     "4B": {
         "GRIFONDORO": {
-            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim"],
+            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim", "Saif Eddine", "Elia", "Manaf", "Afra", "Laura", "Sneha"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -49,7 +49,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca"],
+            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca", "Yasmin", "Samanta", "Maha", "Mayor", "Omor", "Armaan"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
@@ -58,7 +58,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Davide", "Noemi", "Alice", "Lorenzo", "Zara", "Maestra Valentina"],
+            "students": ["Davide", "Noemi", "Alice", "Lorenzo", "Zara", "Maestra Valentina", "Seerat", "Irene", "Karmy", "Mehrin", "Ranjodh", "Barun"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza",
             "traits": "Intelligenti",
@@ -67,7 +67,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf"],
+            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
@@ -116,36 +116,72 @@ const HOUSES_DATA = {
     }
 };
 
-// Risposte magiche del cappello parlante
+// Risposte magiche del cappello parlante (ora con variante "alt" per ogni casa)
 const MAGICAL_RESPONSES = {
-    "GRIFONDORO": [
-        "Hmm... interessante...",
-        "Sento scorrere in te il sangue del leone...",
-        "Coraggio... sì, molto coraggio...",
-        "E un cuore nobile che batte per la giustizia...",
-        "Non c'è dubbio... GRIFONDORO!"
-    ],
-    "TASSOROSSO": [
-        "Mmm... che anima gentile...",
-        "Percepisco lealtà e dedizione...",
-        "Un cuore paziente e laborioso...",
-        "Sì... vedo chiaramente...",
-        "TASSOROSSO sarà la tua casa!"
-    ],
-    "CORVONERO": [
-        "Affascinante... molto affascinante...",
-        "Una mente brillante e curiososa...",
-        "Saggezza oltre gli anni...",
-        "La conoscenza è il tuo tesoro più grande...",
-        "CORVONERO ti accoglierà con onore!"
-    ],
-    "SERPEVERDE": [
-        "Ooh... sento ambizione...",
-        "Determinazione e astuzia...",
-        "Un carattere forte e deciso...",
-        "La grandezza scorre nelle tue vene...",
-        "SERPEVERDE è la tua destinazione!"
-    ]
+    "GRIFONDORO": {
+        "default": [
+            "Hmm... interessante...",
+            "Sento scorrere in te il sangue del leone...",
+            "Coraggio... sì, molto coraggio...",
+            "E un cuore nobile che batte per la giustizia...",
+            "Non c'è dubbio... GRIFONDORO!"
+        ],
+        "alt": [
+            "Il ruggito dentro di te è forte...",
+            "Vedo imprese audaci all'orizzonte...",
+            "Lo spirito valoroso non ti abbandona...",
+            "Hai il fuoco della determinazione...",
+            "GRIFONDORO: questo è il tuo destino!"
+        ]
+    },
+    "TASSOROSSO": {
+        "default": [
+            "Mmm... che anima gentile...",
+            "Percepisco lealtà e dedizione...",
+            "Un cuore paziente e laborioso...",
+            "Sì... vedo chiaramente...",
+            "TASSOROSSO sarà la tua casa!"
+        ],
+        "alt": [
+            "Il tuo animo è calmo e saldo...",
+            "La costanza sarà la tua forza...",
+            "Il tuo operato racconta impegno e amore...",
+            "La gentilezza guida i tuoi passi...",
+            "TASSOROSSO ti accoglie con affetto!"
+        ]
+    },
+    "CORVONERO": {
+        "default": [
+            "Affascinante... molto affascinante...",
+            "Una mente brillante e curiosa...",
+            "Intelligenza che risplende nei tuoi occhi...",
+            "La conoscenza è il tuo tesoro più grande...",
+            "CORVONERO ti accoglierà con onore!"
+        ],
+        "alt": [
+            "I tuoi pensieri volano alto...",
+            "Ragionamento acuto e intuito sottile...",
+            "Cerchi risposte dove gli altri si fermano...",
+            "La tua curiosità è una lampada che illumina...",
+            "CORVONERO aspira a te!"
+        ]
+    },
+    "SERPEVERDE": {
+        "default": [
+            "Ooh... sento ambizione...",
+            "Determinazione e astuzia...",
+            "Un carattere forte e deciso...",
+            "La grandezza scorre nelle tue vene...",
+            "SERPEVERDE è la tua destinazione!"
+        ],
+        "alt": [
+            "Vedo piani silenziosi ma efficaci...",
+            "La tua visione ti porterà lontano...",
+            "Astuzia e pazienza sono tue compagne...",
+            "Hai il fuoco dell'ambizione controllata...",
+            "SERPEVERDE ti chiamerà a sé!"
+        ]
+    }
 };
 
 const MUGGLE_MESSAGE = "Hmm... molto strano... questo nome non compare nei registri di Hogwarts... Deve essere un Babbano!";
@@ -739,7 +775,131 @@ function showParchmentMessage(message, isFinal) {
     `;
 }
 
-// Trova la casata di uno studente (usa dati della classe corrente)
+/* ---------------------------
+   Audio per risposte del Cappello
+   - cerca e riproduce: /audio/{house}_{variant}.mp3
+     es. /audio/grifondoro_default.mp3
+   - mantiene riferimento currentResponseAudio per stop
+   - riduce temporaneamente volume bgAudio (duck) durante la riproduzione della voce
+   --------------------------- */
+let currentResponseAudio = null;
+let _responseAudioEndedHandler = null;
+
+// stato bg audio per fade/restore
+let bgAudioOriginalVolume = 0.6;
+let _bgDuckingInterval = null;
+
+function getBgAudioElement() {
+    return document.getElementById('bgAudio');
+}
+
+function _fadeAudio(audioEl, from, to, duration = 500, onComplete) {
+    if (!audioEl) { if (onComplete) onComplete(); return; }
+    if (_bgDuckingInterval) {
+        clearInterval(_bgDuckingInterval);
+        _bgDuckingInterval = null;
+    }
+    const steps = Math.max(6, Math.round(duration / 30));
+    let step = 0;
+    const stepDelta = (to - from) / steps;
+    audioEl.volume = Math.max(0, Math.min(1, from));
+    _bgDuckingInterval = setInterval(() => {
+        step++;
+        const v = from + stepDelta * step;
+        audioEl.volume = Math.max(0, Math.min(1, v));
+        if (step >= steps) {
+            clearInterval(_bgDuckingInterval);
+            _bgDuckingInterval = null;
+            if (onComplete) onComplete();
+        }
+    }, duration / steps);
+}
+
+function duckBackgroundAudio(toVolume = 0.12, duration = 400) {
+    const bg = getBgAudioElement();
+    if (!bg) return;
+    // salva volume originale solo la prima volta
+    bgAudioOriginalVolume = (typeof bgAudioOriginalVolume === 'number') ? bgAudioOriginalVolume : bg.volume || 0.6;
+    try {
+        _fadeAudio(bg, bg.volume ?? bgAudioOriginalVolume, toVolume, duration);
+    } catch (err) {
+        console.warn('⚠️ duckBackgroundAudio error', err);
+    }
+}
+
+function restoreBackgroundAudio(duration = 600) {
+    const bg = getBgAudioElement();
+    if (!bg) return;
+    try {
+        _fadeAudio(bg, bg.volume, bgAudioOriginalVolume, duration);
+    } catch (err) {
+        console.warn('⚠️ restoreBackgroundAudio error', err);
+    }
+}
+
+function playResponseAudio(house, variant = 'default') {
+    // house expected uppercase like "GRIFONDORO"
+    if (!house) return null;
+    const houseKey = house.toLowerCase();
+    const src = `audio/${houseKey}_${variant}.mp3`;
+    try {
+        // crea elemento audio e prova a riprodurre
+        const audio = new Audio(src);
+        audio.preload = 'auto';
+        audio.volume = 1.0;
+        audio.loop = false;
+
+        // duck background audio so voice is in primo piano
+        duckBackgroundAudio(0.12, 350);
+
+        // when response audio ends, restore bg audio automatically
+        _responseAudioEndedHandler = () => {
+            try { restoreBackgroundAudio(700); } catch (e) { /* swallow */ }
+        };
+        audio.addEventListener('ended', _responseAudioEndedHandler);
+
+        audio.play().then(() => {
+            // ok, playing
+            currentResponseAudio = audio;
+            console.log(`🔊 Playing response audio: ${src}`);
+        }).catch((err) => {
+            console.warn(`⚠️ Could not autoplay response audio ${src}:`, err);
+            // in case of fail, ensure we still restore bg audio after a small delay
+            setTimeout(() => restoreBackgroundAudio(500), 800);
+            currentResponseAudio = null;
+        });
+        return audio;
+    } catch (err) {
+        console.warn('⚠️ playResponseAudio error:', err);
+        // ensure bg restored on error
+        setTimeout(() => restoreBackgroundAudio(500), 400);
+        return null;
+    }
+}
+
+function stopResponseAudio() {
+    if (currentResponseAudio) {
+        try {
+            // remove ended listener
+            if (_responseAudioEndedHandler) {
+                try { currentResponseAudio.removeEventListener('ended', _responseAudioEndedHandler); } catch(e) {}
+                _responseAudioEndedHandler = null;
+            }
+            currentResponseAudio.pause();
+            currentResponseAudio.currentTime = 0;
+            console.log('⏹️ Stopped response audio');
+        } catch (err) {
+            console.warn('⚠️ Error stopping response audio', err);
+        }
+        currentResponseAudio = null;
+    }
+    // restore background audio when response stops (if not already in progress)
+    try {
+        restoreBackgroundAudio(600);
+    } catch (err) { /* swallow */ }
+}
+
+/* Trova la casata di uno studente (usa dati della classe corrente) */
 function findStudentHouse(name) {
     const normalizedName = name.toLowerCase().trim();
     
@@ -755,7 +915,7 @@ function findStudentHouse(name) {
     return null;
 }
 
-// Esegue il processo di smistamento con effetti potenziati
+/* Esegue il processo di smistamento con effetti potenziati */
 function performSorting(name, house) {
     console.log(`📝 Performing enhanced sort: ${name} -> ${house}`);
     
@@ -766,7 +926,29 @@ function performSorting(name, house) {
         console.log(`✅ Added ${name} to ${house} (class ${currentClass}):`, sorted[house]);
     }
     
-    const responses = MAGICAL_RESPONSES[house];
+    // Scegli la serie di risposte: 30% di usare la variante "alt" se presente, altrimenti default
+    const respCfg = MAGICAL_RESPONSES[house];
+    let responses = [];
+    // determine variant BEFORE choosing responses so we can play audio
+    let useAlt = false;
+    if (respCfg && typeof respCfg === 'object') {
+        useAlt = Math.random() < 0.3 && Array.isArray(respCfg.alt);
+    }
+    const variant = useAlt ? 'alt' : 'default';
+    
+    if (Array.isArray(respCfg)) {
+        responses = respCfg; // backward-compatible
+    } else if (respCfg && typeof respCfg === 'object') {
+        responses = variant === 'alt' ? respCfg.alt || respCfg.default : respCfg.default || respCfg.alt || [];
+    } else {
+        responses = []; // fallback vuoto
+    }
+
+    // Try to play the matching audio file for the chosen house+variant
+    try {
+        playResponseAudio(house, variant);
+    } catch (err) { console.warn('Could not play response audio', err); }
+    
     let currentLine = 0;
     
     function showNextResponse() {
@@ -774,6 +956,8 @@ function performSorting(name, house) {
             console.log('🎉 Sorting complete!');
             setTimeout(() => {
                 stopEnhancedHatAnimation();
+                // stop response audio when done
+                stopResponseAudio();
                 highlightHouseWithEffects(house);
                 unlockUI();
             }, 2000);
@@ -786,6 +970,12 @@ function performSorting(name, house) {
         console.log(`💬 Showing enhanced response ${currentLine}: ${response}`);
         
         displayTextWithEnhancedTypewriter(response, isFinal, () => {
+            // NEW: when final line finishes typing, change background to house color
+            if (isFinal) {
+                try {
+                    setBackdropHouse(house);
+                } catch (err) { console.warn('Could not set backdrop house', err); }
+            }
             currentLine++;
             setTimeout(showNextResponse, isFinal ? 1000 : 2500);
         });
@@ -1003,6 +1193,24 @@ function createHouseExplosion(card, house) {
     }
 }
 
+// NEW: set / reset magic-background class to match announced house
+function setBackdropHouse(house) {
+    const bg = document.querySelector('.magic-background');
+    if (!bg || !house) return;
+    // remove any previous house-bg-* classes
+    bg.classList.remove('house-bg-grifondoro','house-bg-tassorosso','house-bg-corvonero','house-bg-serpeverde');
+    const cls = 'house-bg-' + house.toLowerCase();
+    bg.classList.add(cls, 'house-active');
+    console.log(`🖌️ Applied backdrop class: ${cls}`);
+}
+
+function resetBackdropHouse() {
+    const bg = document.querySelector('.magic-background');
+    if (!bg) return;
+    bg.classList.remove('house-bg-grifondoro','house-bg-tassorosso','house-bg-corvonero','house-bg-serpeverde','house-active');
+    console.log('🧹 Reset backdrop to default');
+}
+
 // Unlock UI con riattivazione effetti
 function unlockUI() {
     isProcessing = false;
@@ -1020,6 +1228,9 @@ function unlockUI() {
         input.value = '';
         setTimeout(() => input.focus(), 500);
     }
+    
+    // NEW: reset backdrop to original
+    resetBackdropHouse();
     
     console.log('🔓 UI unlocked with enhanced effects reactivated');
 }
