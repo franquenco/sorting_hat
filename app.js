@@ -276,7 +276,7 @@ function initializeParchment() {
     // Imposta direttamente il contenuto di attesa (funziona anche se la pergamena è stata sovrascritta)
     sortingText.innerHTML = `
         <div class="waiting-message" style="font-family: 'Cinzel', serif; color: #8B7355; font-style: italic; font-size: 15px; text-align: center; line-height: 1.6;">
-            ✨ Benvenuto nella Grande Sala di Hogwarts ✨<br><br>
+            ✨ Benvenuto nella Sala Grande di Hogwarts ✨<br><br>
             Inserisci il tuo nome nel campo qui accanto e clicca<br>
             "<strong>Avvia Smistamento</strong>" per scoprire<br>
             quale casa ti accoglierà!<br><br>
@@ -926,16 +926,13 @@ function performSorting(name, house) {
         console.log(`✅ Added ${name} to ${house} (class ${currentClass}):`, sorted[house]);
     }
     
-    // Scegli la serie di risposte: 30% di usare la variante "alt" se presente, altrimenti default
+    // Scegli la serie di risposte: ora alterniamo le varianti per la stessa casata (default/alt)
     const respCfg = MAGICAL_RESPONSES[house];
     let responses = [];
-    // determine variant BEFORE choosing responses so we can play audio
-    let useAlt = false;
-    if (respCfg && typeof respCfg === 'object') {
-        useAlt = Math.random() < 0.3 && Array.isArray(respCfg.alt);
-    }
-    const variant = useAlt ? 'alt' : 'default';
-    
+
+    // NEW: usa chooseNextVariant per alternare audio/testo tra invocazioni successive
+    const variant = chooseNextVariant(house, respCfg);
+
     if (Array.isArray(respCfg)) {
         responses = respCfg; // backward-compatible
     } else if (respCfg && typeof respCfg === 'object') {
@@ -1420,3 +1417,34 @@ window.enhancedHogwartsApp = {
     initializeParchment,
     setCurrentClass: (cls) => { if (HOUSES_DATA[cls]) { currentClass = cls; } }
 };
+
+// -----------------------------
+// Track last-used variant per classe+house (default | alt)
+// -----------------------------
+const lastUsedVariant = {}; // es: { "4A": { "GRIFONDORO": "default", ... }, "4B": { ... } }
+
+function chooseNextVariant(house, respCfg) {
+    // respCfg può essere array (legacy) o object con default/alt
+    const cls = getActiveClass(); // usa la classe corrente
+    if (!lastUsedVariant[cls]) lastUsedVariant[cls] = {};
+
+    const hasAlt = respCfg && typeof respCfg === 'object' && Array.isArray(respCfg.alt);
+    if (!hasAlt) {
+        // se non esiste variante "alt", usa sempre default
+        lastUsedVariant[cls][house] = 'default';
+        return 'default';
+    }
+
+    const last = lastUsedVariant[cls][house];
+    let next;
+    if (!last) {
+        // primo utilizzo: scegli iniziale (50/50)
+        next = Math.random() < 0.5 ? 'alt' : 'default';
+    } else {
+        // alterna rispetto all'ultima
+        next = last === 'alt' ? 'default' : 'alt';
+    }
+
+    lastUsedVariant[cls][house] = next;
+    return next;
+}

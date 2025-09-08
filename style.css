@@ -1636,7 +1636,7 @@ body {
 .parchment.compact {
     width: 100%;
     max-width: 500px;
-    height: 55vh; /* Altezza fissa compatta */
+    max-height: 65vh; Altezza fissa compatta
     background: linear-gradient(45deg, #F5E6D3, #E8D5B7);
     border: 3px solid #8B7355;
     border-radius: 15px;
