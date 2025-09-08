@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smistamento delle Casate di Hogwarts</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sfondo magico con particelle potenziate -->
+    <div class="magic-background">
+        <div class="particles"></div>
+        <div class="enhanced-particles"></div>
+        <div class="floating-particles"></div>
+        
+        <!-- Candele gotiche potenziate -->
+        <div class="candles">
+            <div class="candle gothic-candle" style="left: 5%; animation-delay: 0s; height: 70px;"></div>
+            <div class="candle gothic-candle" style="left: 12%; animation-delay: 1s; height: 50px;"></div>
+            <div class="candle gothic-candle" style="left: 20%; animation-delay: 2s; height: 65px;"></div>
+            <div class="candle gothic-candle" style="left: 28%; animation-delay: 0.5s; height: 45px;"></div>
+            <div class="candle gothic-candle" style="left: 35%; animation-delay: 1.5s; height: 75px;"></div>
+            <div class="candle gothic-candle" style="left: 43%; animation-delay: 2.5s; height: 55px;"></div>
+            <div class="candle gothic-candle" style="left: 52%; animation-delay: 0.8s; height: 68px;"></div>
+            <div class="candle gothic-candle" style="left: 60%; animation-delay: 1.8s; height: 48px;"></div>
+            <div class="candle gothic-candle" style="left: 68%; animation-delay: 2.2s; height: 72px;"></div>
+            <div class="candle gothic-candle" style="left: 75%; animation-delay: 0.3s; height: 52px;"></div>
+            <div class="candle gothic-candle" style="left: 82%; animation-delay: 1.2s; height: 66px;"></div>
+            <div class="candle gothic-candle" style="left: 88%; animation-delay: 2.8s; height: 58px;"></div>
+            <div class="candle gothic-candle" style="left: 94%; animation-delay: 0.7s; height: 74px;"></div>
+        </div>
+        
+        <!-- Candelabri gotici -->
+        <div class="gothic-candelabra left-candelabra"></div>
+        <div class="gothic-candelabra right-candelabra"></div>
+        
+        <!-- Nebbia magica -->
+        <div class="magical-mist"></div>
+        
+        <!-- Bagliori misteriosi -->
+        <div class="mysterious-glow glow-1"></div>
+        <div class="mysterious-glow glow-2"></div>
+        <div class="mysterious-glow glow-3"></div>
+    </div>
+
+    <!-- Contenuto principale con layout orizzontale -->
+    <div class="main-container">
+        <!-- Header compatto -->
+        <header class="header">
+            <h1 class="main-title">Benvenuti a Hogwarts!</h1>
+            <!-- Audio toggle (click to mute/unmute). Posizionato fixed in alto a destra via CSS -->
+            <button id="audioToggle" aria-label="Toggle audio" title="Attiva/Disattiva musica">
+                <span class="audio-label">SONORUS!</span>
+                <!-- SVG nota musicale (usa currentColor) -->
+                <svg class="audio-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+                </svg>
+                <!-- SVG icona muto (invisibile di default, mostrata quando audio è in riproduzione/unmuted) -->
+                <svg class="muted-icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+                    <path fill="currentColor" d="M16.5 12c0-1.77-.77-3.36-2-4.47L14 8.04A5.99 5.99 0 0 1 18 12c0 1.66-.66 3.17-1.73 4.24L16.5 16c.69-.69 1-1.56 1-2.5zM4 12v0c0 2.21 1.79 4 4 4h1l4 4V4l-4 4H8c-2.21 0-4 1.79-4 4z"/>
+                    <line x1="2" y1="2" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
+        </header>
+
+        <!-- Sezione centrale con layout orizzontale ottimizzato -->
+        <main class="central-section">
+            <!-- Layout orizzontale: Input + Cappello | Pergamena -->
+            <div class="horizontal-layout">
+                <!-- Sezione sinistra: Input e Cappello -->
+                <div class="left-section">
+                    <div class="input-section">
+                        <select id="classSelect" class="form-control" aria-label="Scegli la classe">
+                            <option value="">Scegli la classe</option>
+                            <option value="4A">Classe 4A</option>
+                            <option value="4B">Classe 4B</option>
+                            <option value="4C">Classe 4C</option>
+                        </select>
+                        <div class="input-wrapper">
+                            <input type="text" id="studentName" class="magic-input" placeholder="Inserisci il tuo nome..." maxlength="50">
+                        </div>
+                        <button id="startSorting" class="magic-button">
+                            <span>🎩 Avvia Smistamento ✨</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cappello parlante espressivo -->
+                    <div class="sorting-hat-container">
+                        <div id="sortingHat" class="sorting-hat">
+                            <div class="hat-face">
+                                <div class="hat-eyebrows">
+                                    <div class="eyebrow left-eyebrow"></div>
+                                    <div class="eyebrow right-eyebrow"></div>
+                                </div>
+                                <div class="hat-eyes">
+                                    <div class="eye left-eye">
+                                        <div class="pupil"></div>
+                                        <div class="sparkle"></div>
+                                    </div>
+                                    <div class="eye right-eye">
+                                        <div class="pupil"></div>
+                                        <div class="sparkle"></div>
+                                    </div>
+                                </div>
+                                <div class="hat-mouth"></div>
+                            </div>
+                            <!-- Particelle magiche dal cappello -->
+                            <div class="hat-particles"></div>
+                        </div>
+                    </div>
+
+                <!-- Sezione destra: Pergamena compatta -->
+                <div class="right-section">
+                    <div class="parchment-wrapper">
+                        <div class="parchment compact">
+                            <div class="parchment-header">
+                                <div class="parchment-title">🏰 Responso del Cappello Parlante 🏰</div>
+                            </div>
+                            <div class="parchment-content">
+                                <div id="sortingText" class="sorting-text">
+                                    <div class="waiting-message">Inserisci il tuo nome e clicca "Avvia Smistamento" per scoprire la tua casa!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer con card delle casate sempre visibili -->
+        <footer class="houses-footer">
+            <div class="house-card" data-house="GRIFONDORO">
+                <div class="house-emblem gryffindor-emblem">🦁</div>
+                <div class="house-info">
+                    <h3>Grifondoro</h3>
+                    <p>Casa del coraggio, dell'audacia e della cavalleria</p>
+                    <button class="view-students-btn" data-house="GRIFONDORO">Vedi Studenti Smistati</button>
+                </div>
+            </div>
+
+            <div class="house-card" data-house="TASSOROSSO">
+                <div class="house-emblem hufflepuff-emblem">🦡</div>
+                <div class="house-info">
+                    <h3>Tassorosso</h3>
+                    <p>Casa della lealtà, della pazienza e del duro lavoro</p>
+                    <button class="view-students-btn" data-house="TASSOROSSO">Vedi Studenti Smistati</button>
+                </div>
+            </div>
+
+            <div class="house-card" data-house="CORVONERO">
+                <div class="house-emblem ravenclaw-emblem">🦅</div>
+                <div class="house-info">
+                    <h3>Corvonero</h3>
+                    <p>Casa dell'intelligenza, della saggezza e dell'apprendimento</p>
+                    <button class="view-students-btn" data-house="CORVONERO">Vedi Studenti Smistati</button>
+                </div>
+            </div>
+
+            <div class="house-card" data-house="SERPEVERDE">
+                <div class="house-emblem slytherin-emblem">🐍</div>
+                <div class="house-info">
+                    <h3>Serpeverde</h3>
+                    <p>Casa dell'ambizione, della determinazione e dell'astuzia</p>
+                    <button class="view-students-btn" data-house="SERPEVERDE">Vedi Studenti Smistati</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modale per visualizzare gli studenti -->
+    <div id="studentsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Studenti Smistati</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul id="studentsList"></ul>
+                <div id="noStudents" class="no-students hidden">
+                    Nessuno studente è ancora stato smistato in questa casa.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container per scia particelle cursore -->
+    <div id="cursor-trail-container"></div>
+    
+    <!-- Effetti sparkle per il cursore -->
+    <div id="sparkles-container"></div>
+
+    <!-- Background audio: loop + preload. Verrà avviato in JS (muted per autoplay policy) -->
+    <audio id="bgAudio" src="audio/ambient.mp3" loop preload="auto"></audio>
+
+    <script src="app.js"></script>
+</body>
+</html>
