@@ -2,7 +2,7 @@
 const HOUSES_DATA = {
     "4A": {
         "GRIFONDORO": {
-            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", /* Maestra Anna rimossa da qui */],
+            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestro Luca"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio, dell'audacia e della cavalleria",
             "traits": "Coraggiosi, audaci, temerari e cavallereschi",
@@ -40,7 +40,7 @@ const HOUSES_DATA = {
     },
     "4B": {
         "GRIFONDORO": {
-            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim", "Saif Eddine", "Elia", "Manaf", "Afra", "Laura", "Sneha"],
+            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim", "Saif Eddine", "Elia", "Manaf", "Afra", "Laura", "Sneha", "Maestro Luca"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -49,7 +49,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca", "Yasmin", "Samanta", "Maha", "Mayor", "Omor", "Armaan"],
+            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca", "Yasmin", "Samanta", "Maha", "Mayor", "Omor", "Armaan", "Maestra Valentina"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
@@ -58,7 +58,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Davide", "Noemi", "Alice", "Lorenzo", "Zara", "Maestra Valentina", "Seerat", "Irene", "Karmy", "Mehrin", "Ranjodh", "Barun"],
+            "students": ["Davide", "Noemi", "Alice", "Lorenzo", "Zara", "Maestra Valentina", "Seerat", "Irene", "Karmy", "Mehrin", "Ranjodh", "Barun", "Maestra Noemi", "Maestra Amelia"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza",
             "traits": "Intelligenti",
@@ -67,7 +67,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros"],
+            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros", "Maestra Maria Rita", "Maestra Mariarita"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
@@ -78,7 +78,7 @@ const HOUSES_DATA = {
     },
     "4C": {
         "GRIFONDORO": {
-            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara"],
+            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -105,7 +105,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Sabrina", "Adarsh", "Teodora", "Lina", "Ilef", "Maestra Cristina"],
+            "students": ["Sabrina", "Adarsh", "Teodora", "Lina", "Ilef", "Maestra Cristina", "Maaz"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
