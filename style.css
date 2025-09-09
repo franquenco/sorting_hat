@@ -1186,7 +1186,7 @@ body {
     display: flex;
     gap: 30px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 80%;
     height: 100%;
     align-items: stretch; /* Assicura che entrambe le sezioni abbiano la stessa altezza */
 }
@@ -1296,8 +1296,9 @@ body {
 }
 
 .sorting-hat {
-    width: 260px;
-    height: 300px;
+    width: 65%;
+    /* height: 300px; */
+    aspect-ratio: 4 / 5;
     background: linear-gradient(to bottom, #654321 0%, #4A3728 50%, #2C1810 100%);
     /* Cappello con frontino sottile e base molto larga, poi sale a cono */
     -webkit-clip-path: polygon(
