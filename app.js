@@ -78,7 +78,7 @@ const HOUSES_DATA = {
     },
     "4C": {
         "GRIFONDORO": {
-            "students": ["Rocco", "Daria", "Ivo", "Camilla", "Enzo"],
+            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -87,7 +87,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Arianna", "Gian", "Patrizia", "Samuele", "Hana"],
+            "students": ["Romaisaa", "Eveline", "Anshdeep", "Youssef", "Ismail", "Maestra Alice"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
@@ -96,7 +96,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Silvia", "Edoardo", "Fabrizia", "Nino", "Rita"],
+            "students": ["Tafsir", "Rehab", "Abdoul", "Santiago", "Gurjot"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza",
             "traits": "Intelligenti",
@@ -105,7 +105,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Timo", "Laila", "Oscar", "Vittoria", "Khalid", "Maestra Cristina"],
+            "students": ["Sabrina", "Adarsh", "Teodora", "Lina", "Ilef", "Maestra Cristina"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
