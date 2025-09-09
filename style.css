@@ -1296,7 +1296,8 @@ body {
 }
 
 .sorting-hat {
-    width: 70%;
+    width: 68%;
+    max-width: 450px;
     /* height: 300px; */
     aspect-ratio: 4 / 5;
     background: linear-gradient(to bottom, #654321 0%, #4A3728 50%, #2C1810 100%);
