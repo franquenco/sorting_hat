@@ -309,14 +309,21 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    /* make background cover all content and remain visible during scroll (mobile safe) */
+    background: linear-gradient(135deg, #000000 0%, #0B1426 30%, #1a1a3e 70%, #0B1426 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #f8f8ff;
+    min-height: 100dvh;
+    min-height: 100vh; /* fallback */
+    overflow-y: auto; /* allow page to scroll so background continues under content */
+    position: relative;
+    font-family: 'Libre Baskerville', 'Merriweather', serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* Typography */
@@ -797,14 +804,20 @@ select.form-control option:active {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    overflow: hidden; /* Elimina scroll per stare in viewport */
-    font-family: 'Libre Baskerville', 'Merriweather', serif;
-    font-size: 16px; /* Font più grande per leggibilità */
+    /* make background cover all content and remain visible during scroll (mobile safe) */
     background: linear-gradient(135deg, #000000 0%, #0B1426 30%, #1a1a3e 70%, #0B1426 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     color: #f8f8ff;
+    min-height: 100dvh;
+    min-height: 100vh; /* fallback */
+    overflow-y: auto; /* allow page to scroll so background continues under content */
     position: relative;
+    font-family: 'Libre Baskerville', 'Merriweather', serif;
+    font-size: 16px;
     font-weight: 400;
+    overflow: hidden;
 }
 
 /* Sfondo magico potenziato */
@@ -2125,7 +2138,7 @@ body {
     }
     
     .parchment.compact {
-        height: 250px;
+        height: 550px;
     }
     
     .houses-footer {
@@ -2153,12 +2166,13 @@ body {
     }
     
     .main-title {
-        font-size: 1.6rem;
+        font-size: 2.2rem;
+        margin-top: 3rem;
     }
     
-    .parchment.compact {
+    /* .parchment.compact {
         height: 200px;
-    }
+    } */
 }
 
 /* Audio icon: usa currentColor per ereditare il colore del testo */
