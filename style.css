@@ -1125,7 +1125,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding: 12px 20px;
+    padding: 12px;
     box-sizing: border-box;
     position: relative;
     z-index: 1;
@@ -1232,7 +1232,7 @@ body {
 
 /* FIX CRITICO - Campo input visibile */
 .magic-input {
-    padding: 16px 24px;
+    padding: 16px 16px;
     font-size: 18px; /* Font più grande */
     font-family: 'Libre Baskerville', serif;
     font-weight: 600;
