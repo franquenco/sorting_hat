@@ -40,7 +40,7 @@ const HOUSES_DATA = {
     },
     "4B": {
         "GRIFONDORO": {
-            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim", "Saif Eddine", "Elia", "Manaf", "Afra", "Laura", "Sneha", "Maestro Luca"],
+            "students": ["Marco", "Giulia", "Samir", "Luna", "Ibrahim", "Saif Eddine", "Elia", "Manaf", "Afra", "Laura", "Sneha", "Maestro Luca", "Annamaria"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
