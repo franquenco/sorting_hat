@@ -2,7 +2,7 @@
 const HOUSES_DATA = {
     "4A": {
         "GRIFONDORO": {
-            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestro Luca"],
+            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestro Luca", "Maestra Francesca DM"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio, dell'audacia e della cavalleria",
             "traits": "Coraggiosi, audaci, temerari e cavallereschi",
