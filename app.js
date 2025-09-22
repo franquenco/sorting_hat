@@ -67,7 +67,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros", "Maestra Maria Rita", "Maestra Mariarita"],
+            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros", "Maestra Maria Rita", "Maestra Mariarita", "Maestra Angela"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
