@@ -20,7 +20,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca"],
+            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca", "Ginevra"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza, della saggezza e dell'apprendimento",
             "traits": "Intelligenti, saggi, creativi e curiosi",
