@@ -20,7 +20,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca", "Ginevra"],
+            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza, della saggezza e dell'apprendimento",
             "traits": "Intelligenti, saggi, creativi e curiosi",
@@ -67,7 +67,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros", "Maestra Maria Rita", "Maestra Mariarita", "Maestra Angela"],
+            "students": ["Nicola", "Beatrice", "Federico", "Maya", "Yusuf", "Tyago", "Simarpreet", "Naziha", "Islam", "Uros", "Maestra Maria Rita", "Maestra Mariarita", "Maestra Angela", "Maestra Valeria"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione",
             "traits": "Ambiziosi",
