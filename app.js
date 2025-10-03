@@ -2,7 +2,7 @@
 const HOUSES_DATA = {
     "4A": {
         "GRIFONDORO": {
-            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestro Luca", "Maestra Francesca DM"],
+            "students": ["Abderahmane", "Greis", "Tayhan", "Tafsir", "Leonardo", "Maestro Luca", "Maestro Giovanni"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio, dell'audacia e della cavalleria",
             "traits": "Coraggiosi, audaci, temerari e cavallereschi",
@@ -78,7 +78,7 @@ const HOUSES_DATA = {
     },
     "4C": {
         "GRIFONDORO": {
-            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca"],
+            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca", "Maestra Stefania", "Maestro Leone"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -87,7 +87,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Romaisaa", "Eveline", "Anshdeep", "Youssef", "Ismail", "Maestra Alice"],
+            "students": ["Romaisaa", "Eveline", "Anshdeep", "Youssef", "Ismail", "Maestra Alice", "Maestra Federica"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
