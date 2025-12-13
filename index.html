@@ -6,6 +6,7 @@
     <title>Smistamento delle Case di Hogwarts</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Libre+Baskerville:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Sfondo magico con particelle potenziate -->
@@ -42,13 +43,55 @@
         <div class="mysterious-glow glow-1"></div>
         <div class="mysterious-glow glow-2"></div>
         <div class="mysterious-glow glow-3"></div>
+
+        <!-- Decorazioni natalizie: luci, stelle, neve e albero stilizzato -->
+        <div class="christmas-decor" aria-hidden="true">
+            <div id="christmas-lights" class="christmas-lights" aria-hidden="true"></div>
+            <div id="stars-container" class="stars-container" aria-hidden="true"></div>
+            <div id="snow-container" class="snow-container" aria-hidden="true"></div>
+            <div id="christmas-tree" class="christmas-tree" aria-hidden="true">
+                <div class="tree-star" aria-hidden="true">★</div>
+                <div class="tree-layers">
+                    <div class="tree-layer layer-1"></div>
+                    <div class="tree-layer layer-2"></div>
+                    <div class="tree-layer layer-3"></div>
+                    <!-- Luci animate sull'albero -->
+                    <div class="tree-ornament" style="top:30px; left:30px; background:#FFD700;"></div>
+                    <div class="tree-ornament" style="top:50px; left:70px; background:#FF5C5C;"></div>
+                    <div class="tree-ornament" style="top:70px; left:100px; background:#9AD0F5;"></div>
+                    <div class="tree-ornament" style="top:90px; left:40px; background:#A78BFA;"></div>
+                    <div class="tree-ornament" style="top:110px; left:110px; background:#6EE7B7;"></div>
+                    <!-- Ghirlanda animata -->
+                    <div class="tree-garland" style="position:absolute; left:50%; top:38%; width:80px; height:24px; transform:translateX(-50%) rotate(-7deg); border-bottom:3px dotted #ffd700; border-radius:0 0 40px 40px; opacity:0.85;"></div>
+                </div>
+                <div class="tree-trunk"></div>
+                <!-- Regali stilizzati -->
+                <div class="tree-gifts">
+                    <div class="gift-box">
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-ribbon horiz"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-box blue">
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-ribbon horiz"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                    <div class="gift-box green">
+                        <div class="gift-ribbon"></div>
+                        <div class="gift-ribbon horiz"></div>
+                        <div class="gift-bow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Contenuto principale con layout orizzontale -->
     <div class="main-container">
         <!-- Header compatto -->
         <header class="header">
-            <h1 class="main-title">Benvenuti a Hogwarts!</h1>
+            <h1 class="main-title">BENVENUTI A HOGWARTS!</h1>
             <!-- Audio toggle (click to mute/unmute). Posizionato fixed in alto a destra via CSS -->
             <button id="audioToggle" aria-label="Toggle audio" title="Attiva/Disattiva musica">
                 <span class="audio-label">SONORUS!</span>

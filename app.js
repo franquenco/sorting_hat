@@ -96,7 +96,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Tafsir", "Rehab", "Abdoul", "Santiago", "Gurjot", , "Maestro Leone"],
+            "students": ["Tafsir", "Rehab", "Abdoul", "Santiago", "Gurjot" , "Maestro Leone"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza",
             "traits": "Intelligenti",
@@ -264,7 +264,10 @@ function initializeApp() {
     
     // Initialize parchment with waiting message
     initializeParchment();
-    
+
+    // Decorazioni natalizie: neve, stelle, luci, albero
+    setupChristmasDecorations();
+
     console.log('✨ Enhanced app initialized successfully!');
 }
 
@@ -1447,4 +1450,82 @@ function chooseNextVariant(house, respCfg) {
 
     lastUsedVariant[cls][house] = next;
     return next;
+}
+
+// Decorazioni natalizie: popola neve, stelle, luci e ornamenti sull'albero
+function setupChristmasDecorations() {
+    try {
+        const snowContainer = document.getElementById('snow-container');
+        const starsContainer = document.getElementById('stars-container');
+        const lightsContainer = document.getElementById('christmas-lights');
+        if (snowContainer) {
+            const flakes = 40;
+            for (let i = 0; i < flakes; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                const left = Math.random() * 100;
+                const size = 3 + Math.random() * 6;
+                const delay = Math.random() * -20;
+                const duration = 8 + Math.random() * 12;
+                flake.style.left = left + 'vw';
+                flake.style.width = size + 'px';
+                flake.style.height = size + 'px';
+                flake.style.opacity = (0.6 + Math.random() * 0.4).toString();
+                flake.style.animationDuration = duration + 's';
+                flake.style.animationDelay = delay + 's';
+                snowContainer.appendChild(flake);
+            }
+        }
+        if (starsContainer) {
+            const stars = 18;
+            for (let i = 0; i < stars; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.textContent = '✦';
+                const left = Math.random() * 100;
+                const top = Math.random() * 40;
+                const size = 8 + Math.random() * 12;
+                const delay = Math.random() * 6;
+                star.style.left = left + 'vw';
+                star.style.top = top + 'vh';
+                star.style.fontSize = size + 'px';
+                star.style.animationDelay = delay + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+        if (lightsContainer) {
+            const lights = 20;
+            for (let i = 0; i < lights; i++) {
+                const light = document.createElement('div');
+                light.className = 'christmas-light';
+                const left = (i / lights) * 100 + (Math.random() * 4 - 2);
+                const colors = ['#FF5C5C', '#FFD166', '#6EE7B7', '#9AD0F5', '#FFD1F2'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                light.style.left = left + '%';
+                light.style.background = color;
+                light.style.height = (10 + Math.random() * 12) + 'px';
+                light.style.animationDuration = (1.5 + Math.random() * 2.5) + 's';
+                light.style.animationDelay = (Math.random() * 2) + 's';
+                lightsContainer.appendChild(light);
+            }
+        }
+        // Ornamenti sull'albero
+        const tree = document.getElementById('christmas-tree');
+        if (tree) {
+            const ornamentColors = ['#FFD700', '#FF5C5C', '#9AD0F5', '#A78BFA'];
+            for (let i = 0; i < 6; i++) {
+                const o = document.createElement('div');
+                o.className = 'tree-ornament';
+                const left = 20 + Math.random() * 60;
+                const top = 20 + Math.random() * 60;
+                o.style.left = left + '%';
+                o.style.top = top + '%';
+                o.style.background = ornamentColors[Math.floor(Math.random() * ornamentColors.length)];
+                tree.appendChild(o);
+            }
+        }
+        console.log('🎄 Christmas decorations populated');
+    } catch (err) {
+        console.warn('⚠️ setupChristmasDecorations error', err);
+    }
 }

@@ -1039,7 +1039,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40%;
+    height: 80%;
     background: linear-gradient(to top, rgba(19, 52, 59, 0.8), rgba(19, 52, 59, 0.3), transparent);
     animation: mistFlow 12s ease-in-out infinite;
 }
@@ -1139,13 +1139,13 @@ body {
 }
 
 .main-title {
-    font-family: 'Cinzel', serif;
-    font-size: 3rem;
-    font-weight: 600;
-    color: #f5cb60;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-family: 'Mountains of Christmas', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #f44f17;
+    text-shadow: 4px 2px 4px rgba(0,0,0,0.8);
     margin: 0;
-    letter-spacing: 2px;
+    letter-spacing: 8px;
 }
 
 /* Audio toggle - fixed top-right */
@@ -2201,3 +2201,127 @@ body {
 
 /* aggiorna anche il focus/hover per rendere il cambio più evidente */
 #audioToggle.muted { transform: translateY(-2px) scale(1.02); box-shadow: 0 12px 28px rgba(0,0,0,0.55); }
+
+/* --- Decorazioni natalizie: neve, luci, stelle, albero --- */
+.snow-container {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 6px; height: 6px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 0; }
+    5% { opacity: 0.9; }
+    100% { transform: translateY(110vh) translateX(40px) rotate(360deg); opacity: 0.6; }
+}
+.christmas-lights {
+    position: absolute;
+    top: 10%; left: 6%; right: 6%; height: 40px;
+    pointer-events: none;
+    z-index: 60;
+}
+.christmas-light {
+    position: absolute;
+    width: 10px; height: 14px;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.8);
+    transform-origin: center top;
+    animation: twinkle 2.4s linear infinite;
+}
+@keyframes twinkle {
+    0% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.15); }
+    100% { opacity: 0.4; transform: scaleY(1); }
+}
+.stars-container {
+    position: absolute;
+    top: 10%; left: 4%; right: 4%; bottom: 60%;
+    pointer-events: none;
+    z-index: 55;
+    scale: 2;
+}
+.star {
+    position: absolute;
+    color: rgba(255, 245, 200, 0.95);
+    font-size: 12px;
+    text-shadow: 0 0 6px rgba(255,235,180,0.9);
+    opacity: 0.9;
+    animation: starTwinkle 4s ease-in-out infinite;
+}
+@keyframes starTwinkle {
+    0% { opacity: 0.2; transform: scale(0.6) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1.05) rotate(10deg); }
+    100% { opacity: 0.2; transform: scale(0.6) rotate(0deg); }
+}
+.christmas-tree {
+    position: absolute;
+    left: 2%;
+    bottom: 25%;
+    width: 140px; max-width: 18vw;
+    z-index: 70;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scale: 2;
+}
+.tree-star {
+    font-size: 22px;
+    color: #FFD700;
+    text-shadow: 0 0 8px rgba(255,215,0,0.9);
+    margin-bottom: 6px;
+}
+.tree-layers {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tree-layer {
+    width: 0; height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-bottom: 60px solid #0b5f0b;
+    margin-top: -18px;
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.6));
+    transition: transform 0.3s ease;
+}
+.tree-layer.layer-2 { transform: translateY(-20px) scale(0.9); border-bottom-color: #0f6f0f; }
+.tree-layer.layer-3 { transform: translateY(-38px) scale(0.8); border-bottom-color: #167f16; }
+.tree-trunk {
+    width: 28px; height: 30px;
+    background: linear-gradient(180deg, #5a3418, #8b531e);
+    border-radius: 4px;
+    margin-top: -8px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+}
+.tree-ornament {
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255,255,255,0.8);
+    animation: ornamentBlink 3s linear infinite;
+}
+@keyframes ornamentBlink {
+    0% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0.3; transform: scale(0.8); }
+}
+@media (max-width: 768px) {
+    .christmas-tree { right: 6%; width: 110px; max-width: 26vw; }
+    .tree-layer { border-left-width: 48px; border-right-width: 48px; border-bottom-width: 48px; }
+    .tree-layer.layer-2 { transform: translateY(-16px) scale(0.92); }
+    .tree-layer.layer-3 { transform: translateY(-30px) scale(0.86); }
+}
+/* --- Fine decorazioni natalizie --- */
