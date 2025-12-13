@@ -11,7 +11,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Razin", "Tassnime", "Nusaiba", "Puneet", "Harfateh", "Maestra Alissa", "Maestra Federica"],
+            "students": ["Razin", "Tassnime", "Nusaiba", "Puneet", "Harfateh", "Maestra Alissa", "Maestra Federica", "Maestra Silvia"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà, della pazienza e del duro lavoro", 
             "traits": "Leali, pazienti, gentili e laboriosi",
@@ -49,7 +49,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca", "Yasmin", "Samanta", "Maha", "Mayor", "Omor", "Armaan", "Maestra Valentina"],
+            "students": ["Elena", "Matteo", "Sara", "Omar", "Rebecca", "Yasmin", "Samanta", "Maha", "Mayor", "Omor", "Armaan", "Maestra Valentina", "Maestra Silvia"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
@@ -78,7 +78,7 @@ const HOUSES_DATA = {
     },
     "4C": {
         "GRIFONDORO": {
-            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca", "Maestra Stefania", "Maestro Leone"],
+            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca", "Maestra Stefania", "Maestra Stefania"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
@@ -87,7 +87,7 @@ const HOUSES_DATA = {
             "founder": "Godric Grifondoro"
         },
         "TASSOROSSO": {
-            "students": ["Romaisaa", "Eveline", "Anshdeep", "Youssef", "Ismail", "Maestra Alice", "Maestra Federica"],
+            "students": ["Romaisaa", "Eveline", "Anshdeep", "Youssef", "Ismail", "Maestra Alice", "Maestra Federica", "Maestra Silvia", "Maestra Teodora"],
             "colors": ["#CCCC00", "#2F2F2F"],
             "description": "Casa della lealtà",
             "traits": "Leali",
@@ -96,7 +96,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Tafsir", "Rehab", "Abdoul", "Santiago", "Gurjot"],
+            "students": ["Tafsir", "Rehab", "Abdoul", "Santiago", "Gurjot", , "Maestro Leone"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza",
             "traits": "Intelligenti",
