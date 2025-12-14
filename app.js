@@ -1256,11 +1256,11 @@ function showHouseStudents(house) {
         'SERPEVERDE': 'Serpeverde'
     };
     
-    if (title) {
-        title.textContent = `Studenti Smistati in ${houseNames[house]} (${currentClass})`;
-        const c = getHouseData(house).colors[0];
-        title.style.color = c;
-    }
+    // if (title) {
+    //     title.textContent = `Studenti Smistati in ${houseNames[house]} (${currentClass})`;
+    //     const c = getHouseData(house).colors[0];
+    //     title.style.color = c;
+    // }
     
     const students = getSortedStudents()[house] || [];
     console.log(`📊 Students in ${house} (class ${currentClass}):`, students);
@@ -1270,7 +1270,7 @@ function showHouseStudents(house) {
         if (noStudents) {
             noStudents.classList.remove('hidden');
             noStudents.innerHTML = `
-                <div style="text-align: center; color: rgba(248, 248, 255, 0.7); font-style: italic; padding: 40px 20px; font-size: 16px;">
+                <div>
                     🏰 Nessuno studente è ancora stato smistato in ${houseNames[house]}.<br><br>
                     Sii il primo a unirti a questa nobile casata! ✨
                 </div>
@@ -1280,7 +1280,7 @@ function showHouseStudents(house) {
         if (noStudents) noStudents.classList.add('hidden');
         if (list) {
             list.innerHTML = students.map((student, index) => 
-                `<li style="animation: studentAppear 0.3s ease-out ${index * 0.1}s both; border-left-color: ${getHouseData(house).colors[0]}">
+                `<li style="animation: studentAppear 0.3s ease-out ${index * 0.1}s both;">
                     🎓 ${student}
                 </li>`
             ).join('');
@@ -1289,6 +1289,42 @@ function showHouseStudents(house) {
     
     modal.classList.remove('hidden');
     modal.style.animation = 'modalAppear 0.3s ease-out forwards';
+
+    // Gestione background overlay modale per casa
+    if (modal) {
+        modal.classList.remove('modal-house-grifondoro','modal-house-tassorosso','modal-house-corvonero','modal-house-serpeverde');
+        if (house === 'GRIFONDORO') modal.classList.add('modal-house-grifondoro');
+        if (house === 'TASSOROSSO') modal.classList.add('modal-house-tassorosso');
+        if (house === 'CORVONERO') modal.classList.add('modal-house-corvonero');
+        if (house === 'SERPEVERDE') modal.classList.add('modal-house-serpeverde');
+        // Aggiungi decorazioni natalizie se non già presenti
+        if (!modal.querySelector('.modal-xmas-decor')) {
+            const decor = document.createElement('div');
+            decor.className = 'modal-xmas-decor';
+            decor.innerHTML = `
+                <span class="modal-xmas-snowflake s1">❄️</span>
+                <span class="modal-xmas-snowflake s2">❄️</span>
+                <span class="modal-xmas-snowflake s3">❄️</span>
+                <span class="modal-xmas-star st1">✦</span>
+                <span class="modal-xmas-star st2">✦</span>
+            `;
+            modal.appendChild(decor);
+        }
+    }
+    // Inserisci decorazione natalizia tra header e body (se non già presente)
+    if (modal) {
+        const header = modal.querySelector('.modal-header');
+        if (header && !header.nextElementSibling?.classList.contains('modal-xmas-divider')) {
+            const divider = document.createElement('div');
+            divider.className = 'modal-xmas-divider';
+            // Ripeti il pattern per coprire tutta la larghezza
+            const pattern = '❄️ ✦ ';
+            let repeatCount = 10;
+            if (window.innerWidth < 600) repeatCount = 6;
+            divider.innerHTML = `<span style="white-space:nowrap;">${pattern.repeat(repeatCount)}</span>`;
+            header.insertAdjacentElement('afterend', divider);
+        }
+    }
     console.log('✅ Enhanced modal opened');
 }
 
@@ -1296,6 +1332,13 @@ function showHouseStudents(house) {
 function closeModal() {
     const modal = document.getElementById('studentsModal');
     if (modal && !modal.classList.contains('hidden')) {
+        // Rimuovi anche la decorazione natalizia divider
+        const divider = modal.querySelector('.modal-xmas-divider');
+        if (divider) divider.remove();
+        // Rimuovi anche la classe di background casa e le decorazioni natalizie
+        modal.classList.remove('modal-house-grifondoro','modal-house-tassorosso','modal-house-corvonero','modal-house-serpeverde');
+        const decor = modal.querySelector('.modal-xmas-decor');
+        if (decor) decor.remove();
         modal.style.animation = 'modalDisappear 0.3s ease-out forwards';
         setTimeout(() => {
             modal.classList.add('hidden');
@@ -1398,11 +1441,70 @@ function tryAutoplayAudio() {
     });
 }
 
+// Fiocchi di neve che cadono e ruotano in loop sullo sfondo
+function setupFallingSnow() {
+    // Crea due contenitori: back (z-index 0) e front (z-index 1)
+    let snowBack = document.getElementById('falling-snow-back');
+    let snowFront = document.getElementById('falling-snow-front');
+    if (!snowBack) {
+        snowBack = document.createElement('div');
+        snowBack.id = 'falling-snow-back';
+        snowBack.style.position = 'fixed';
+        snowBack.style.top = '0';
+        snowBack.style.left = '0';
+        snowBack.style.width = '100vw';
+        snowBack.style.height = '100vh';
+        snowBack.style.pointerEvents = 'none';
+        snowBack.style.zIndex = '0';
+        snowBack.style.overflow = 'hidden';
+        document.body.appendChild(snowBack);
+    }
+    if (!snowFront) {
+        snowFront = document.createElement('div');
+        snowFront.id = 'falling-snow-front';
+        snowFront.style.position = 'fixed';
+        snowFront.style.top = '0';
+        snowFront.style.left = '0';
+        snowFront.style.width = '100vw';
+        snowFront.style.height = '100vh';
+        snowFront.style.pointerEvents = 'none';
+        snowFront.style.zIndex = '1';
+        snowFront.style.overflow = 'hidden';
+        document.body.appendChild(snowFront);
+    }
+    // Pulisci eventuali fiocchi precedenti
+    snowBack.innerHTML = '';
+    snowFront.innerHTML = '';
+    const snowflakes = 30;
+    for (let i = 0; i < snowflakes; i++) {
+        const flake = document.createElement('span');
+        flake.className = 'falling-snowflake';
+        flake.textContent = '❄️';
+        flake.style.left = Math.random() * 100 + 'vw';
+        const size = 18 + Math.random() * 22;
+        flake.style.fontSize = size + 'px';
+        const duration = 6 + Math.random() * 7;
+        const delay = Math.random() * 8;
+        flake.style.animationDuration = duration + 's, ' + (3 + Math.random() * 3) + 's';
+        flake.style.animationDelay = delay + 's, ' + (Math.random() * 2) + 's';
+        // 25% dei fiocchi davanti, il resto dietro
+        if (Math.random() < 0.25) {
+            snowFront.appendChild(flake);
+        } else {
+            snowBack.appendChild(flake);
+        }
+    }
+}
+
 // Inizializza quando il DOM è pronto
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeApp);
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeApp();
+        setupFallingSnow();
+    });
 } else {
     initializeApp();
+    setupFallingSnow();
 }
 
 // Export per debug e testing

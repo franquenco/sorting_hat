@@ -263,6 +263,63 @@
   --color-info-rgb: var(--color-gray-300-rgb);
 }
 
+[data-color-scheme="dark"] {
+  /* RGB versions for opacity control (dark mode) */
+  --color-gray-400-rgb: 119, 124, 124;
+  --color-teal-300-rgb: 50, 184, 198;
+  --color-gray-300-rgb: 167, 169, 169;
+  --color-gray-200-rgb: 245, 245, 245;
+
+  /* Colorful background palette - Dark Mode */
+  --color-bg-1: rgba(29, 78, 216, 0.15); /* Dark blue */
+  --color-bg-2: rgba(180, 83, 9, 0.15); /* Dark yellow */
+  --color-bg-3: rgba(21, 128, 61, 0.15); /* Dark green */
+  --color-bg-4: rgba(185, 28, 28, 0.15); /* Dark red */
+  --color-bg-5: rgba(107, 33, 168, 0.15); /* Dark purple */
+  --color-bg-6: rgba(194, 65, 12, 0.15); /* Dark orange */
+  --color-bg-7: rgba(190, 24, 93, 0.15); /* Dark pink */
+  --color-bg-8: rgba(8, 145, 178, 0.15); /* Dark cyan */
+  
+  /* Semantic Color Tokens (Dark Mode) */
+  --color-background: var(--color-charcoal-700);
+  --color-surface: var(--color-charcoal-800);
+  --color-text: var(--color-gray-200);
+  --color-text-secondary: rgba(var(--color-gray-300-rgb), 0.7);
+  --color-primary: var(--color-teal-300);
+  --color-primary-hover: var(--color-teal-400);
+  --color-primary-active: var(--color-teal-800);
+  --color-secondary: rgba(var(--color-gray-400-rgb), 0.15);
+  --color-secondary-hover: rgba(var(--color-gray-400-rgb), 0.25);
+  --color-secondary-active: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-border: rgba(var(--color-gray-400-rgb), 0.3);
+  --color-error: var(--color-red-400);
+  --color-success: var(--color-teal-300);
+  --color-warning: var(--color-orange-400);
+  --color-info: var(--color-gray-300);
+  --color-focus-ring: rgba(var(--color-teal-300-rgb), 0.4);
+  --color-btn-primary-text: var(--color-slate-900);
+  --color-card-border: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-card-border-inner: rgba(var(--color-gray-400-rgb), 0.15);
+  --shadow-inset-sm: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  --color-border-secondary: rgba(var(--color-gray-400-rgb), 0.2);
+  --color-select-caret: rgba(var(--color-gray-200-rgb), 0.8);
+
+  /* Common style patterns - updated for dark mode */
+  --focus-ring: 0 0 0 3px var(--color-focus-ring);
+  --focus-outline: 2px solid var(--color-primary);
+  --status-bg-opacity: 0.15;
+  --status-border-opacity: 0.25;
+  --select-caret-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23134252' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  --select-caret-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+
+  /* RGB versions for dark mode */
+  --color-success-rgb: var(--color-teal-300-rgb);
+  --color-error-rgb: var(--color-red-400-rgb);
+  --color-warning-rgb: var(--color-orange-400-rgb);
+  --color-info-rgb: var(--color-gray-300-rgb);
+}
+
 [data-color-scheme="light"] {
   /* RGB versions for opacity control (light mode) */
   --color-brown-600-rgb: 94, 82, 64;
@@ -1367,24 +1424,24 @@ body {
       I commenti indicano la posizione o la funzione di ciascun punto.
     */
     clip-path: polygon(
-      0% 96%,    /* bordo basso sinistra (inizio frontino) */
-      100% 96%,  /* bordo basso destra (fine frontino) */
-      100% 99%, /* angolo in basso a destra */
-      0% 100%,   /* angolo in basso a sinistra */
-      15% 90%,   /* inizio salita lato sinistro */
-      15% 80%,   /* curva sinistra */
-      20% 70%,   /* curva sinistra superiore */
-      24% 40%,   /* salita verso la punta (sinistra) */
-      32% 22%,   /* restringimento verso la punta (sinistra) */
-      40% 8%,    /* quasi in cima (sinistra) */
-      60% 0%,    /* punta del cappello */
-      70% 2%,    /* quasi in cima (destra) */
-      68% 22%,   /* restringimento verso la punta (destra) */
-      76% 37%,   /* discesa lato destro superiore */
-      80% 63%,   /* curva destra superiore */
-      85% 80%,   /* curva destra */
-      90% 91%,   /* inizio discesa lato destro */
-      100% 96%   /* chiusura frontino (uguale al secondo punto) */
+      0% 96%,
+      100% 96%,
+      100% 99%,
+      0% 100%,
+      15% 90%,
+      15% 80%,
+      20% 70%,
+      24% 40%,
+      32% 22%,
+      40% 8%,
+      60% 0%,
+      70% 2%,
+      68% 22%,
+      76% 37%,
+      80% 63%,
+      85% 80%,
+      90% 91%,
+      100% 96%
     );
     border-radius: 12px;
     position: relative; /* changed: relative so base can be absolutely positioned inside */
@@ -1648,7 +1705,7 @@ body {
 
 /* Sezione destra: Pergamena compatta - FIX LAYOUT */
 .right-section {
-    flex: 1; /* Prende tutto lo spazio rimanente */
+    flex: 1.2; /* Prende tutto lo spazio rimanente */
     height: 100%;
     display: flex;
     align-items: center;
@@ -1862,37 +1919,62 @@ body {
     pointer-events: none;
 }
 
+/* --- Overlay modale colorato per casa selezionata --- */
+.modal.modal-house-grifondoro {
+    background: rgba(139,0,0,0.45);
+}
+.modal.modal-house-tassorosso {
+    background: rgba(204,204,0,0.32);
+}
+.modal.modal-house-corvonero {
+    background: rgba(0,51,102,0.38);
+}
+.modal.modal-house-serpeverde {
+    background: rgba(0,100,0,0.36);
+}
+
 .modal-content {
     background: linear-gradient(135deg, #1a1a3e, #0B1426);
-    border-radius: 12px;
-    border: 2px solid #B8860B;
-    max-width: 450px;
-    width: 90%;
-    max-height: 600px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border-radius: 30px;
+    border: 10px solid transparent;
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    background-image: linear-gradient(135deg, #545465, #000000),
+      linear-gradient(90deg, #FFD700 0%, #FF5C5C 30%, #6EE7B7 60%, #FFD1F2 100%);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 24px 4px #FFD70055;
+    position: relative;
+
+    /* 545465 */
+    /* #000000 */
 }
 
 .modal-header {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    padding: 20px 32px 16px 32px;
+    background: none;
+    /* rimuovo border-bottom */
 }
-
 .modal-header h2 {
+    flex: 1 1 auto;
+    text-align: center;
     font-family: 'Cinzel', serif;
-    color: #B8860B;
+    color: #ffffff;
     margin: 0;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: 600;
+    z-index: 2;
 }
-
 .close-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
     background: none;
     border: none;
     font-size: 28px;
-    color: #B8860B;
+    color: #ce0a0a;
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -1901,10 +1983,26 @@ body {
     justify-content: center;
     border-radius: 50%;
     transition: background 0.2s ease;
+    z-index: 3;
+}
+.close-modal:hover {
+    background: rgba(229, 93, 25, 0.2);
 }
 
-.close-modal:hover {
-    background: rgba(184, 134, 11, 0.2);
+/* Decorazione natalizia tra header e body della modal */
+.modal-header + .modal-xmas-divider {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 0 0 8px 0;
+    font-size: 1.3rem;
+    letter-spacing: 0.18em;
+    user-select: none;
+    color: #FFD700;
+    text-shadow: 0 0 8px #fff, 0 0 12px #FFD700;
+    background: none;
+    border: none;
+    display: block;
 }
 
 .modal-body {
@@ -1922,12 +2020,14 @@ body {
 #studentsList li {
     padding: 12px 16px;
     margin-bottom: 8px;
-    background: rgba(184, 134, 11, 0.2);
+    /* background: rgba(184, 134, 11, 0.2); */
     border-radius: 8px;
-    border-left: 4px solid #B8860B;
+    /* border-left: 4px solid #B8860B; */
     color: #f8f8ff;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 18px;
+    text-transform: capitalize;
+    text-align: center;
 }
 
 .no-students {
@@ -1935,7 +2035,7 @@ body {
     color: rgba(248, 248, 255, 0.7);
     font-style: italic;
     padding: 40px 20px;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .sorting-hat:hover .hat-face,
@@ -2207,10 +2307,9 @@ body {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 50;
-    overflow: hidden;
+    z-index: 1;
 }
-.snowflake {
+.modal-xmas-snowflake, .modal-xmas-star {
     position: absolute;
     top: -10px;
     width: 6px; height: 6px;
@@ -2324,4 +2423,34 @@ body {
     .tree-layer.layer-2 { transform: translateY(-16px) scale(0.92); }
     .tree-layer.layer-3 { transform: translateY(-30px) scale(0.86); }
 }
-/* --- Fine decorazioni natalizie --- */
+
+/* Fiocchi di neve che cadono */
+#falling-snow {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    /* z-index: 2; */
+    overflow: hidden;
+}
+.falling-snowflake {
+    position: absolute;
+    top: -40px;
+    font-size: 1.2em;
+    color: #fff;
+    opacity: 0.85;
+    filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 12px #FFD70055);
+    animation-name: snowFall, snowSpin;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, infinite;
+}
+@keyframes snowFall {
+    0% { top: -40px; opacity: 0.7; }
+    10% { opacity: 1; }
+    100% { top: 100vh; opacity: 0.7; }
+}
+@keyframes snowSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1.1); }
+}
+
+/* --- Fine overlay modale per casa e decorazioni --- */
