@@ -1496,15 +1496,38 @@ function setupFallingSnow() {
     }
 }
 
+// Aggiungi decorazioni natalizie al cappello
+function addChristmasToSortingHat() {
+    const hat = document.getElementById('sortingHat');
+    if (!hat || hat.querySelector('.hat-xmas-decor')) return;
+    // Contenitore decorazioni
+    const decor = document.createElement('div');
+    decor.className = 'hat-xmas-decor';
+    decor.style.position = 'absolute';
+    decor.style.top = '0';
+    decor.style.left = '0';
+    decor.style.width = '100%';
+    decor.style.height = '100%';
+    decor.style.pointerEvents = 'none';
+    // Solo agrifoglio/rametto
+    const holly = document.createElement('div');
+    holly.className = 'hat-xmas-holly';
+    decor.appendChild(holly);
+    hat.style.position = 'relative';
+    hat.appendChild(decor);
+}
+
 // Inizializza quando il DOM è pronto
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
         initializeApp();
         setupFallingSnow();
+        addChristmasToSortingHat();
     });
 } else {
     initializeApp();
     setupFallingSnow();
+    addChristmasToSortingHat();
 }
 
 // Export per debug e testing
