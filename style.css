@@ -2147,7 +2147,7 @@ body {
 }
 
 .house-emblem {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     margin-bottom: 4px;
     display: block;
 }
@@ -2400,24 +2400,16 @@ body {
     box-shadow: 0 2px 8px #b71c1c55;
     transform: rotate(-18deg);
 }
-.hat-xmas-ponpon {
-    position: absolute;
-    top: -30px;
-    left: 64%;
-    width: 16px;
-    height: 16px;
-    background: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 8px #fff, 0 0 4px #FFD700;
-    z-index: 4;
-}
+
 .hat-xmas-holly {
     position: absolute;
-    left: 18%;
+    left: 20%;
     bottom: 30px;
     width: 32px;
     height: 18px;
     z-index: 2;
+    scale: 1.5;
+    transform: rotate(-2deg) skewX(-10deg);
 }
 .hat-xmas-holly::before {
     content: '';
