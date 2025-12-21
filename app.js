@@ -20,7 +20,7 @@ const HOUSES_DATA = {
             "founder": "Helga Tassorosso"
         },
         "CORVONERO": {
-            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca"],
+            "students": ["Mohammed", "Brando", "Shafeena", "Hidayatou", "Hamja", "Maestra Francesca", "Maestro Andrea"],
             "colors": ["#003366", "#8B7355"],
             "description": "Casa dell'intelligenza, della saggezza e dell'apprendimento",
             "traits": "Intelligenti, saggi, creativi e curiosi",
@@ -29,7 +29,7 @@ const HOUSES_DATA = {
             "founder": "Priscilla Corvonero"
         },
         "SERPEVERDE": {
-            "students": ["Sayan", "Farhan", "Tabeeb", "Sanvir", "Joya", "Maestra Anna"],
+            "students": ["Sayan", "Farhan", "Tabeeb", "Sanvir", "Joya", "Maestra Anna", "Misha", "Micha", "Micka", "Mika"],
             "colors": ["#006400", "#C0C0C0"],
             "description": "Casa dell'ambizione, della determinazione e dell'astuzia",
             "traits": "Ambiziosi, determinati, astuti e intraprendenti", 
@@ -78,7 +78,7 @@ const HOUSES_DATA = {
     },
     "4C": {
         "GRIFONDORO": {
-            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca", "Maestra Stefania", "Maestra Stefania"],
+            "students": ["Gabriele", "Nicola", "Shayaan", "Anna", "Sara", "Maestro Luca", "Maestra Stefania"],
             "colors": ["#8B0000", "#DAA520"],
             "description": "Casa del coraggio",
             "traits": "Coraggiosi",
